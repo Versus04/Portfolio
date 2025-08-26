@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SplitShare • Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <a href="/" class="brand"><span class="logo">SB</span><span class="brand-text">Shubham Bind</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/projects/" class="active">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <h1>SplitShare — Group Expense Tracker</h1>
+        <p class="page-desc">Collaborative expense app with custom split rules, real-time sync, and graph-based settle-up.</p>
+      </div>
+    </div>
+
+    <section class="container section detail">
+      <article class="panel">
+        <div class="prose">
+          <h2>Overview</h2>
+          <p>SplitShare makes it easy to split bills with friends. You can create groups, add expenses with custom splits, and see who owes what.</p>
+          <h2>Architecture</h2>
+          <p>It uses MVVM and Clean Architecture. I used AWS (Cognito, AppSync, DynamoDB, S3) for sign-in, sync, and storing receipts.</p>
+          <h2>Highlights</h2>
+          <ul>
+            <li>Custom split rules and groups</li>
+            <li>Graph-based settle-up to minimize transactions</li>
+            <li>Real-time sync via AppSync; secure receipts in S3</li>
+          </ul>
+        </div>
+      </article>
+      <aside class="panel">
+        <h2>Tech stack</h2>
+        <div class="stack">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span>
+          <span class="tag">AWS Cognito</span><span class="tag">DynamoDB</span><span class="tag">AppSync</span><span class="tag">S3</span>
+        </div>
+        <div style="height:12px"></div>
+        <a class="btn" href="#">View on GitHub</a>
+        <div style="height:8px"></div>
+        <a class="btn" href="#">View on Play Store</a>
+        <div style="height:16px"></div>
+  <p class="card-meta">Role: Android app developer</p>
+        <p class="card-meta">Year: 2025</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">© <span id="year"></span> Shubham Kumar Bind.</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

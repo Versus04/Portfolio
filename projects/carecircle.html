@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareCircle • Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <a href="/" class="brand"><span class="logo">SB</span><span class="brand-text">Shubham Bind</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/projects/" class="active">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <h1>CareCircle — Medication Accountability</h1>
+        <p class="page-desc">Android app to combat medication non-adherence with caregiver alerts and AWS-driven workflows.</p>
+      </div>
+    </div>
+
+    <section class="container section detail">
+      <article class="panel">
+        <div class="prose">
+          <h2>Overview</h2>
+          <p>I built CareCircle to make it easier to stick to medication plans. The app sends gentle reminders, and if a dose is missed, it can notify a caregiver.</p>
+          <h2>Architecture</h2>
+          <p>Under the hood it uses MVVM and Clean Architecture. I used WorkManager/AlarmManager for scheduling and AWS (Cognito, DynamoDB, Lambda, SNS) for secure linking and alerts.</p>
+          <h2>Highlights</h2>
+          <ul>
+            <li>Scheduled local notifications and escalation alerts</li>
+            <li>Secure account linking with AWS Cognito</li>
+            <li>Adherence history stored in DynamoDB</li>
+            <li>Automated alerts via Lambda + SNS</li>
+          </ul>
+        </div>
+      </article>
+      <aside class="panel">
+        <h2>Tech stack</h2>
+        <div class="stack">
+          <span class="tag">Kotlin</span><span class="tag">Jetpack Compose</span><span class="tag">MVVM</span>
+          <span class="tag">WorkManager</span><span class="tag">AWS Cognito</span><span class="tag">DynamoDB</span>
+          <span class="tag">Lambda</span><span class="tag">SNS</span>
+        </div>
+        <div style="height:12px"></div>
+        <a class="btn" href="#">View on GitHub</a>
+        <div style="height:8px"></div>
+        <a class="btn" href="#">View on Play Store</a>
+        <div style="height:16px"></div>
+  <p class="card-meta">Role: Android app developer</p>
+        <p class="card-meta">Year: 2025</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">© <span id="year"></span> Shubham Kumar Bind.</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

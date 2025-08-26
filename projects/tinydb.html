@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TinyDB • Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <a href="/" class="brand"><span class="logo">SB</span><span class="brand-text">Shubham Bind</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/projects/" class="active">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <h1>TinyDB — SQL Database Engine</h1>
+        <p class="page-desc">Compact SQL engine with file persistence, written in C++17.</p>
+      </div>
+    </div>
+
+    <section class="container section detail">
+      <article class="panel">
+        <div class="prose">
+          <h2>Overview</h2>
+          <p>I wrote a small SQL engine in C++ that supports CREATE, INSERT, and SELECT with files for storage.</p>
+          <h2>Highlights</h2>
+          <ul>
+            <li>Handles 100k-row inserts and queries within seconds (on my laptop)</li>
+            <li>Modular architecture with core components</li>
+            <li>Robust error handling across scenarios</li>
+          </ul>
+        </div>
+      </article>
+      <aside class="panel">
+        <h2>Tech stack</h2>
+        <div class="stack">
+          <span class="tag">C++17</span><span class="tag">File I/O</span><span class="tag">SQL Parsing</span>
+          <span class="tag">Hash Tables</span><span class="tag">CMake</span>
+        </div>
+        <div style="height:12px"></div>
+        <a class="btn" href="#">View on GitHub</a>
+        <div style="height:16px"></div>
+        <p class="card-meta">Year: 2025</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">© <span id="year"></span> Shubham Kumar Bind.</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>

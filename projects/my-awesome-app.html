@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Awesome App • Project</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+  <a href="/" class="brand"><span class="logo">⬢</span><span class="brand-text">Shubham Bind</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/projects/" class="active">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+        <h1>My Awesome App</h1>
+        <p class="page-desc">A modern social media app built with Kotlin and Jetpack Compose.</p>
+      </div>
+    </div>
+
+    <section class="container section detail">
+      <article class="panel">
+        <img src="/assets/images/placeholder-16x9.png" alt="My Awesome App screenshot" onerror="this.style.display='none'">
+        <div class="prose">
+          <h2>Overview</h2>
+          <p>My Awesome App enables users to create posts, follow friends, and engage in real-time conversations. Built with Jetpack Compose, it offers a fluid, responsive UI and leverages Kotlin coroutines for efficient async operations.</p>
+          <h2>Architecture</h2>
+          <p>The app follows MVVM with a clean architecture approach: data, domain, and presentation layers. It uses <strong>Room</strong> for local persistence, <strong>Retrofit</strong> for network calls, and <strong>Hilt</strong> for dependency injection.</p>
+          <h2>Highlights</h2>
+          <ul>
+            <li>Jetpack Compose UI with Material 3</li>
+            <li>Offline-first with Room and caching</li>
+            <li>Coroutines + Flow for reactive streams</li>
+            <li>Accessibility and performance auditing</li>
+          </ul>
+        </div>
+      </article>
+      <aside class="panel">
+        <h2>Tech stack</h2>
+        <div class="stack">
+          <span class="tag">Kotlin</span>
+          <span class="tag">Jetpack Compose</span>
+          <span class="tag">Coroutines</span>
+          <span class="tag">Hilt</span>
+          <span class="tag">Retrofit</span>
+          <span class="tag">Room</span>
+        </div>
+        <div style="height:12px"></div>
+        <a class="btn btn-primary" href="#" aria-label="View on GitHub">View on GitHub</a>
+        <div style="height:8px"></div>
+        <a class="btn" href="#" aria-label="View on Play Store">View on Play Store</a>
+        <div style="height:16px"></div>
+  <p class="card-meta">Role: Android app developer</p>
+        <p class="card-meta">Year: 2025</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="socials">
+        <a href="#" class="icon-link" aria-label="GitHub">GitHub</a>
+      </div>
+  <p class="copyright">© <span id="year"></span> Shubham Kumar Bind.</p>
+    </div>
+  </footer>
+
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
