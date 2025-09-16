@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SockBench • Project</title>
+  <meta name="description" content="SockBench is a high-performance Linux benchmarking tool comparing RDMA and traditional TCP/UDP socket communication (latency, throughput, scalability)." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/assets/css/styles.css" />
+  <!-- Open Graph / Twitter (replace YOUR_DOMAIN if deploying with a custom domain) -->
+  <meta property="og:title" content="SockBench – RDMA & Socket Benchmarking" />
+  <meta property="og:description" content="Benchmark RDMA vs TCP/UDP sockets on Linux: latency, throughput, message size scaling." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="/projects/sockbench.html" />
+  <meta property="og:image" content="/assets/images/og-sockbench.png" />
+  <link rel="canonical" href="/projects/sockbench.html" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="brand"><span class="logo">SB</span><span class="brand-text">Shubham Bind</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="/projects/" class="active">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/" class="btn btn-primary">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <div class="page-head">
+      <div class="container">
+  <h1>SockBench — RDMA &amp; Socket Benchmarking</h1>
+  <p class="page-desc">High-performance Linux benchmarking tool for comparing RDMA and TCP/UDP sockets.</p>
+      </div>
+    </div>
+
+    <section class="container section detail">
+      <article class="panel">
+        <div class="prose">
+          <h2>Overview</h2>
+          <p>SockBench is a Linux-based benchmarking tool designed to evaluate and compare different communication paths—RDMA (Remote Direct Memory Access) vs traditional TCP/UDP sockets. It provides reproducible measurements of latency, throughput, and scaling behavior across message sizes and connection modes.</p>
+          <p>The goal is to simplify the otherwise complex setup of RDMA-capable environments. With a single lightweight toolchain you can experiment with communication primitives, analyze bandwidth utilization, and build intuition about when low-latency RDMA is worth the complexity over conventional sockets.</p>
+          <p>Built as part of a systems-level exploration into high-performance networking, SockBench emphasizes clarity, minimal dependencies, and extendability (future: UDP, multi-threaded clients, epoll-based server, distributed multi-host runs).</p>
+
+          <h2>Key Features</h2>
+          <ul>
+            <li>RDMA vs TCP/UDP (extensible design; current prototype focused on sockets)</li>
+            <li>Latency and throughput measurement with automatic CSV logging</li>
+            <li>Configurable message sizes & number of messages</li>
+            <li>Supports repeated batch benchmark runs via script</li>
+            <li>Lightweight CLI interface (no heavy dependencies)</li>
+            <li>Generated plots (latency & throughput vs message size)</li>
+          </ul>
+
+          <h2>Usage (from README)</h2>
+          <ol>
+            <li><strong>Compile</strong><br><code>g++ server.cpp -o server</code><br><code>g++ client.cpp -o client</code></li>
+            <li><strong>Run</strong><br>Terminal 1 (server): <code>./server</code><br>Terminal 2 (client): <code>./client 1024 10000</code></li>
+            <li><strong>Batch Benchmarks</strong><br><code>./bench.sh</code> (iterates across message sizes; outputs to <code>results.csv</code>)</li>
+            <li><strong>Plot Results</strong><br><code>python3 results/plot_results.py</code> → outputs <code>latency.png</code>, <code>throughput.png</code></li>
+          </ol>
+
+          <h2>Sample Results</h2>
+          <p>Latency and throughput vary non-linearly with message size; small packets incur per-call overhead while larger packets saturate bandwidth.</p>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr><th>Message Size</th><th>Avg Latency (ms)</th><th>Throughput (MB/s)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>32 B</td><td>0.0618</td><td>0.49</td></tr>
+                <tr><td>64 B</td><td>0.179</td><td>0.34</td></tr>
+                <tr><td>512 B</td><td>0.159</td><td>3.07</td></tr>
+                <tr><td>1 KB</td><td>0.097</td><td>10.0</td></tr>
+                <tr><td>4 KB</td><td>0.053</td><td>73.8</td></tr>
+                <tr><td>64 KB</td><td>0.030</td><td>2049.9</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h2>Challenges & Learnings</h2>
+          <ul>
+            <li>Explored Linux networking stack & soft-RoCE (rxe) constraints in virtualized setups</li>
+            <li>Balanced measurement stability vs runtime (warmup, batching, clock resolution)</li>
+            <li>Clarified trade-offs: RDMA’s low-latency path vs generality & simplicity of TCP/IP</li>
+          </ul>
+
+          <h2>Roadmap</h2>
+          <ul>
+            <li>Add UDP benchmarks for cross-protocol comparison</li>
+            <li>Introduce multi-threaded / multi-connection client</li>
+            <li>Non-blocking epoll server for scalability</li>
+            <li>Distributed multi-host orchestration</li>
+          </ul>
+
+          <h2>License</h2>
+          <p>MIT License.</p>
+        </div>
+      </article>
+      <aside class="panel">
+        <h2>Tech stack</h2>
+        <div class="stack">
+          <span class="tag">C++</span><span class="tag">Linux</span><span class="tag">Sockets</span>
+          <span class="tag">RDMA</span><span class="tag">Benchmarking</span><span class="tag">Bash</span><span class="tag">Plots</span>
+        </div>
+        <div style="height:12px"></div>
+        <a class="btn" href="https://github.com/Versus04/SockBench">View on GitHub</a>
+        <div style="height:12px"></div>
+            <p class="card-meta">Role: Systems / Networking</p>
+        <p class="card-meta">Year: 2025</p>
+      </aside>
+    </section>
+
+    <div class="container" style="margin-top:2rem">
+      <a href="/projects/" class="btn">← Back to Projects</a>
+      <div style="margin-top:1.5rem; font-size:0.9rem; opacity:0.85">
+        <span>Next planned: add UDP + multi-connection benchmarks.</span>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="copyright">© <span id="year"></span> Shubham Kumar Bind.</p>
+    </div>
+  </footer>
+  <script src="/assets/js/main.js" defer></script>
+</body>
+</html>
