@@ -84,6 +84,16 @@
               </tbody>
             </table>
           </div>
+          <div class="plots" style="margin-top:1.5rem; display:grid; gap:1.25rem;">
+            <figure style="margin:0">
+              <img src="/assets/images/latency.png" alt="Latency vs message size plot" loading="lazy" width="640" height="360" />
+              <figcaption style="font-size:0.8rem; opacity:0.8;">Latency decreases as message size increases until system overhead amortizes.</figcaption>
+            </figure>
+            <figure style="margin:0">
+              <img src="/assets/images/throughput.png" alt="Throughput vs message size plot" loading="lazy" width="640" height="360" />
+              <figcaption style="font-size:0.8rem; opacity:0.8;">Throughput climbs rapidly with larger messages, approaching link saturation.</figcaption>
+            </figure>
+          </div>
 
           <h2>Challenges & Learnings</h2>
           <ul>
